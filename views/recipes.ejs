@@ -1,0 +1,37 @@
+<h2>Recipe Suggestions</h2>
+<ul>
+  <% suggestions.forEach(suggestion => { %>
+    <li>
+      <strong><%= suggestion.recipe %></strong><br>
+      
+      <strong>Available Ingredients:</strong>
+      <% if (suggestion.availableIngredients.length > 0) { %>
+        <ul>
+          <% suggestion.availableIngredients.forEach(ingredient => { %>
+            <li>
+              <%= ingredient.name %> 
+              (Required: <%= ingredient.requiredQuantity %>, Available: <%= ingredient.availableQuantity %>)
+            </li>
+          <% }); %>
+        </ul>
+      <% } else { %>
+        <p>None</p>
+      <% } %>
+
+      <strong>Missing Ingredients:</strong>
+      <% if (suggestion.missingIngredients.length > 0) { %>
+        <ul>
+          <% suggestion.missingIngredients.forEach(ingredient => { %>
+            <li>
+              <%= ingredient.name %> 
+              (Required: <%= ingredient.requiredQuantity %>, Available: <%= ingredient.availableQuantity %>)
+            </li>
+          <% }); %>
+        </ul>
+      <% } else { %>
+        <p>None</p>
+      <% } %>
+    </li>
+  <% }); %>
+</ul>
+<a href="/ssh/fridge" class="btn btn-secondary">Back to Fridge</a>

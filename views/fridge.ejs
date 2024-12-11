@@ -1,0 +1,11 @@
+
+
+
+<h2>Your Fridge Contents fetched from SSH Camera</h2>
+<h3>Welcome <%= user.name %> of Household: <%= household ? household.household_name : 'Unknown' %></h2>
+<ul>
+  <% fridgeContents.forEach(item => { %>
+    <li><%= item.quantity %> <%= item.name %> <%= item.description %> (Owned by: <%= item.user.name %>)</li>
+  <% }) %>
+</ul>
+<a href="/ssh/recipes" class="btn btn-primary">Get Recipe Suggestions</a>
