@@ -21,7 +21,7 @@ app.use(flash());
 
 app.use(
   session({
-    secret: process.env.SESSION_SECRET || 'your-secret-key',
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({ mongoUrl: process.env.MONGO_URI || 'mongodb://localhost/ssh_app' }),
