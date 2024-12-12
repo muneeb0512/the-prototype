@@ -7,8 +7,8 @@ mongoose.connect(db.url, {
 }).then(async () => {
   console.log('Connected to MongoDB for seeding fridge.');
 
-  const userId1 = '67598eff3639b4161a80ed67'; 
-  const householdId1 = '67598eff3639b4161a80ed65'; 
+  const userId1 = '675a2fd9c4eebe6d804c6145'; 
+  const householdId1 = '675a2fd9c4eebe6d804c6143'; 
 
   const userId2 = '6759995f739458a773295014'; 
   const householdId2 = '6759995f739458a773295012'; 
